@@ -2,7 +2,7 @@
 
 ## Overview
 
-Caffeine8 is a Linux utility designed to prevent the screen saver from activating when you're away from your computer. It uses the X11 window system to display a simple UI and simulates user activity using the `qdbus` command.
+Caffeine8 is a Linux utility designed to prevent the screen saver from activating when you're away from your computer. It integrates with Wayland or X11 (including Xorg and XLibre) to display a simple UI and simulates user activity using the `qdbus` command.
 
 ## Features
 
@@ -12,7 +12,7 @@ Caffeine8 is a Linux utility designed to prevent the screen saver from activatin
 
 ## Requirements
 
-- Linux with X11 window system
+- Linux with a Wayland or X11 (Xorg/XLibre) display server
 - `qdbus` command-line utility
 - Magick++ library
 

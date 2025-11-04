@@ -33,7 +33,10 @@ namespace caffeine8
     /// @brief Path to the PID file.
     extern const std::string pidFilePath;
 
-    /// @brief Last error message from qbus.
+    /// @brief Path to the status file shared with the UI.
+    extern const std::string statusFilePath;
+
+    /// @brief Last status or error message exposed to the UI.
     extern std::string lastQbusError;
 
     /// @brief Version of the application.
@@ -77,8 +80,27 @@ namespace caffeine8
 
     /**
      * @brief Shows the UI of the application.
+     *
+     * @param targetPid PID of the inhibitor process the UI should control.
      */
-    void showUI();
+    void showUI(pid_t targetPid);
+
+    /**
+     * @brief Enables or disables verbose debug logging.
+     *
+     * @param enabled True to enable debug output.
+     */
+    void setDebugMode(bool enabled);
+
+    /**
+     * @brief Returns true when debug logging is active.
+     */
+    bool isDebugMode();
+
+    /**
+     * @brief Runs the inhibitor loop in the background process.
+     */
+    void runInhibitorLoop();
 
 } // namespace caffeine8
 
